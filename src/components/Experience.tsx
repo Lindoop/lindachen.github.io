@@ -203,9 +203,7 @@ export default function Experience() {
     
     return (
         <div id="experience" className="mt-[100vh] relative w-full h-[130vh] text-white">
-            <h2 className="text-7xl font-header text-center mb-20">My Experiences</h2>
-
-            {/* Building container */}
+            <h2 className="text-7xl font-header text-center mb-20 mt-[10vh]">My Experiences</h2>
             <div className="relative w-full h-full">
                 {WINDOWS.map((win) => {
                     const openWin = OPEN_WINDOWS.find(o => o.id === win.id);

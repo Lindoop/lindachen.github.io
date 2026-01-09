@@ -14,7 +14,6 @@ import Cloud10 from "../assets/Cloud_10.png";
 import Headshot from "../assets/TempHeadshot.jpg";
 
 const CLOUD_IMAGES = [Cloud1, Cloud2, Cloud3, Cloud4, Cloud5, Cloud6, Cloud7, Cloud8, Cloud9, Cloud10];
-// TODO: add more clouds here once you have ~10 assets
 
 type CloudState = {
   x: number;
@@ -39,7 +38,6 @@ export default function About() {
         const CLOUD_HEIGHT_ESTIMATE = 150;
         const CLOUD_WIDTH_ESTIMATE = 300;
 
-        // Initialize cloud states (fixed pool)
         cloudStates.current = CLOUD_IMAGES.map(() => ({
             x: Math.random() * (containerWidth + EDGE_PADDING) - EDGE_PADDING,
             y: EDGE_PADDING + Math.random() * (containerHeight - CLOUD_HEIGHT_ESTIMATE - EDGE_PADDING * 2),
@@ -61,12 +59,7 @@ export default function About() {
 
                 if (cloud.x > containerWidth + scaledWidth + EDGE_PADDING) {
                     cloud.x = -(SPAWN_BUFFER + 40);
-                    cloud.y =
-                        EDGE_PADDING +
-                        Math.random() *
-                        (containerHeight -
-                            CLOUD_HEIGHT_ESTIMATE -
-                            EDGE_PADDING * 2);
+                    cloud.y = EDGE_PADDING + Math.random() * (containerHeight - CLOUD_HEIGHT_ESTIMATE - EDGE_PADDING * 2);
                     cloud.speed = 15 + Math.random() * 25;
                     cloud.size = 1.2 + Math.random() * 1.5;
                 }
@@ -89,67 +82,51 @@ export default function About() {
         const container = containerRef.current;
         if (!planeRefEl || !container) return;
       
-        const startX = window.innerWidth;        // offscreen right
-        const endX = -planeRefEl.offsetWidth;   // fully offscreen left
+        const startX = window.innerWidth;
+        const endX = -planeRefEl.offsetWidth;
       
-        // Scroll range: from top of About section entering viewport to bottom leaving
         const startScroll = container.offsetTop - window.innerHeight * 1.5;
         const endScroll = container.offsetTop + container.clientHeight;
       
         const handleScroll = () => {
-          const scrollY = window.scrollY || window.pageYOffset;
+          const scrollY = window.scrollY;
       
-          // map scroll progress to 0..1
           let progress = (scrollY - startScroll) / (endScroll - startScroll);
           progress = Math.min(Math.max(progress, 0), 1);
       
-          // linear movement across screen
           const x = startX + (endX - startX) * progress;
-          planeRefEl.style.transform = `translateX(${x}px)`; // only horizontal
+          planeRefEl.style.transform = `translateX(${x}px)`;
           planeRefEl.style.opacity = "1";          
         };
       
         window.addEventListener("scroll", handleScroll);
-        handleScroll(); // in case page reloads mid-scroll
+        handleScroll();
         return () => window.removeEventListener("scroll", handleScroll);
       }, []);
       
 
     return (
-        <div
-            id="about"
-            ref={containerRef}
-            className="mt-[80vh] w-full relative overflow-hidden text-white"
-        >
-            <div
-                className="absolute pointer-events-none z-10 plane-float"
-                style={{ top: 0, left: 0 }}
-            >
+        <div id="about" ref={containerRef} className="mt-[80vh] w-full relative overflow-hidden text-white">
+            <div className="absolute pointer-events-none z-10 plane-float" style={{ top: 0, left: 0 }}>
                 <div ref={planeRef}>
                     <img src={AboutMe} className="w-200 h-auto" />
                 </div>
             </div>
 
-            {/* Clouds */}
             {CLOUD_IMAGES.map((src, i) => (
-                <div
-                    key={i}
+                <div key={i}
                     ref={(el) => {
                         if (el) cloudRefs.current[i] = el;
                     }}
-                    className="absolute pointer-events-none opacity-0"
-                    style={{ top: 0, left: 0 }}
+                    className="absolute pointer-events-none opacity-0" style={{ top: 0, left: 0 }}
                 >
                     <img src={src} alt="cloud" className="w-55 h-auto" />
                 </div>
             ))}
 
-            {/* Content */}
             <div className="mt-[28vh] ml-[10vw] relative z-10 flex items-center gap-[15vh]">
                 <div className="max-w-2xl bg-black/40 backdrop-blur-sm rounded-4xl px-10 py-8 shadow-lg">
-                    <p className="text-4xl font-fancy leading-relaxed mb-4">
-                        Hi! I’m Linda.
-                    </p>
+                    <p className="text-4xl font-fancy leading-relaxed mb-4"> Hi! I’m Linda.</p>
 
                     <p className="text-xl font-body leading-relaxed mb-4">
                         I’m a second-year Systems Design Engineering student at the University
@@ -169,11 +146,7 @@ export default function About() {
                 </div>
 
                 <div className="shrink-0">
-                    <img
-                        src={Headshot}
-                        alt="Hand-drawn portrait of Linda"
-                        className="w-125 h-auto rounded-4xl bg-black/30 p-3 shadow-lg backdrop-blur-sm"
-                    />
+                    <img src={Headshot} className="w-125 h-auto rounded-4xl bg-black/30 p-3 shadow-lg backdrop-blur-sm"/>
                 </div>
             </div>
         </div>

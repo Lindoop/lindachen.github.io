@@ -3,8 +3,20 @@ import Fossil1 from "../assets/Fossil_1.png";
 import Fossil2 from "../assets/Fossil_2.png";
 
 const FOSSILS = [
-    { id: 1, img: Fossil1, top: "10%", left: "80%", width: "w-[20vw]" },
-    { id: 2, img: Fossil2, top: "50%", left: "10%", width: "w-[8vw]" },
+    {
+        id: 1,
+        img: Fossil1,
+        top: "10%",
+        left: "80%",
+        width: "w-[20vw]"
+    },
+    {
+        id: 2,
+        img: Fossil2,
+        top: "50%",
+        left: "10%",
+        width: "w-[8vw]"
+    },
 ];
 
 const PROJECTS = [
@@ -27,7 +39,7 @@ export default function Projects() {
 
     return (
         <div id="projects" className="mt-[140vh] relative w-full h-[120vh] text-white">
-            <h2 className="text-6xl font-header text-center mb-10">Projects</h2>
+            <h2 className="text-6xl font-header text-center mb-10 mt-[10vh]">Projects</h2>
 
             <div className="relative w-full h-full">
                 {FOSSILS.map((fossil) => {
@@ -36,35 +48,22 @@ export default function Projects() {
 
                     return (
                         <div key={fossil.id}>
-                            {/* Fossil image */}
-                            <div
-                                className="absolute cursor-pointer"
-                                style={{ top: fossil.top, left: fossil.left }}
+                            <div className="absolute cursor-pointer" style={{ top: fossil.top, left: fossil.left }}
                                 onMouseEnter={() => project && setHoveredId(fossil.id)}
                                 onMouseLeave={() => project && setHoveredId(null)}
                             >
-                                <img
-                                    src={fossil.img}
-                                    alt="fossil"
-                                    className={`${fossil.width} h-auto transition-opacity duration-150 ${
+                                <img src={fossil.img} className={`${fossil.width} h-auto transition-opacity duration-150 ${
                                         isHovered ? "opacity-70" : "opacity-100"
                                     }`}
                                 />
                             </div>
 
-                            {/* Popup */}
                             {isHovered && project && (
                                 <div className="fixed inset-0 z-50 flex items-center justify-center pointer-events-none">
                                     <div className="relative max-w-3xl w-[80%] p-6 bg-black bg-opacity-70 rounded-lg backdrop-blur-sm pointer-events-auto">
-                                        <h3 className="text-3xl font-fancy font-bold mb-1">
-                                            {project.title}
-                                        </h3>
-                                        <p className="text-xl font-body italic mb-2">
-                                            {project.date}
-                                        </p>
-                                        <p className="text-lg leading-relaxed">
-                                            {project.description}
-                                        </p>
+                                        <h3 className="text-3xl font-fancy font-bold mb-1">{project.title}</h3>
+                                        <p className="text-xl font-body italic mb-2">{project.date}</p>
+                                        <p className="text-lg leading-relaxed">{project.description}</p>
                                     </div>
                                 </div>
                             )}
