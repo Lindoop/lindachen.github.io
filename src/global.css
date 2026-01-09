@@ -43,7 +43,7 @@ html, body {
   background-image: url('./assets/Background.png');
   background-repeat: no-repeat;
   background-position: top center;
-  background-size: contain;
+  background-size: cover;
 
   position: relative;
   display: flex;

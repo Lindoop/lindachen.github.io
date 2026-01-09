@@ -13,14 +13,14 @@ function Layout() {
   }, []);
   
   return (
-        <div className="bg">
-            <Navigate />
-            <Title />
-            <About />
-            <Experience />
-            <Projects />
-            <Footer />
-        </div>
+    <div className="bg min-w-[100vw] w-screen">
+        <Navigate />
+        <Title />
+        <About />
+        <Experience />
+        <Projects />
+        <Footer />
+    </div>
   );
 }
 

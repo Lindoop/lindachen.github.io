@@ -29,52 +29,58 @@ const WINDOWS = [
     {
         id: 1,
         img: Window1,
-        top: "11%",
+        top: "15%",
         left: "12%",
+        width: "w-38",
     },
     {
         id: 2,
         img: Window2,
-        top: "5%",
+        top: "9%",
         left: "0%",
+        width: "w-38",
     },
     {
         id: 3,
         img: Window3,
-        top: "52%",
+        top: "61%",
         left: "12%",
+        width: "w-36",
     },
     {
         id: 4,
         img: Window4,
-        top: "52%",
+        top: "61%",
         left: "0%",
+        width: "w-36",
     },
     {
         id: 5,
         img: Window5,
-        top: "95%",
+        top: "104%",
         left: "12%",
+        width: "w-34",
     },
     {
         id: 6,
         img: Window6,
-        top: "100%",
+        top: "110%",
         left: "0%",
+        width: "w-34",
     }
 ];
 const OPEN_WINDOWS = [
     {
         id: 1,
         img: OpenWindow1,
-        top: "-8%",
+        top: "-3%",
         left: "10%",
         width: "w-30",
     },
     {
         id: 2,
         img: OpenWindow2,
-        top: "-5%",
+        top: "-1%",
         left: "0%",
         width: "w-33",
     },
@@ -113,28 +119,28 @@ const WINDOW_LIGHTS = [
     { 
         id: 1,
         img: WindowLight1,
-        top: "-65%",
+        top: "-59%",
         left: "17%",
         width: "w-[85vw]"
     },
     { 
         id: 2,
         img: WindowLight2,
-        top: "-77%",
+        top: "-72%",
         left: "5%",
         width: "w-[95vw]"
     },
     { 
         id: 3,
         img: WindowLight3,
-        top: "-67%",
+        top: "-57%",
         left: "15%",
         width: "w-[85vw]"
     },
     { 
         id: 4,
         img: WindowLight4,
-        top: "-74%",
+        top: "-66%",
         left: "5%",
         width: "w-[95vw]"
     },
@@ -223,7 +229,7 @@ export default function Experience() {
                                 <img
                                     src={win.img}
                                     alt="window closed"
-                                    className={`w-36 h-auto relative transition-opacity duration-150 ${isHovered ? "opacity-0" : "opacity-100"}`}
+                                    className={`${win.width} h-auto relative transition-opacity duration-150 ${isHovered ? "opacity-0" : "opacity-100"}`}
                                     style={{ zIndex: baseZ }}
                                 />
 
