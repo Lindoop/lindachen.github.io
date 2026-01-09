@@ -13,7 +13,7 @@ function Layout() {
   }, []);
   
   return (
-    <div className="bg min-w-[100vw] w-screen">
+    <div className="bg min-w-screen min-h-screen w-screen">
         <Navigate />
         <Title />
         <About />
