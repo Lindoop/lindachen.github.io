@@ -1,17 +1,17 @@
 import { useEffect, useRef } from "react";
-import AboutMe from "../assets/AboutMe.png";
-import Cloud1 from "../assets/Cloud_1.png";
-import Cloud2 from "../assets/Cloud_2.png";
-import Cloud3 from "../assets/Cloud_3.png";
-import Cloud4 from "../assets/Cloud_4.png";
-import Cloud5 from "../assets/Cloud_5.png";
-import Cloud6 from "../assets/Cloud_6.png";
-import Cloud7 from "../assets/Cloud_7.png";
-import Cloud8 from "../assets/Cloud_8.png";
-import Cloud9 from "../assets/Cloud_9.png";
-import Cloud10 from "../assets/Cloud_10.png";
+import AboutMe from "../assets/about/AboutMe.png";
+import Cloud1 from "../assets/about/Cloud_1.png";
+import Cloud2 from "../assets/about/Cloud_2.png";
+import Cloud3 from "../assets/about/Cloud_3.png";
+import Cloud4 from "../assets/about/Cloud_4.png";
+import Cloud5 from "../assets/about/Cloud_5.png";
+import Cloud6 from "../assets/about/Cloud_6.png";
+import Cloud7 from "../assets/about/Cloud_7.png";
+import Cloud8 from "../assets/about/Cloud_8.png";
+import Cloud9 from "../assets/about/Cloud_9.png";
+import Cloud10 from "../assets/about/Cloud_10.png";
 
-import Headshot from "../assets/TempHeadshot.jpg";
+import Headshot from "../assets/about/TempHeadshot.jpg";
 
 const CLOUD_IMAGES = [Cloud1, Cloud2, Cloud3, Cloud4, Cloud5, Cloud6, Cloud7, Cloud8, Cloud9, Cloud10];
 
@@ -116,7 +116,7 @@ export default function About() {
       
 
     return (
-        <div id="about" ref={containerRef} className="w-full mt-[30vh] h-[150vh] relative overflow-hidden text-white">
+        <div id="about" ref={containerRef} className="w-full mt-[30vh] relative overflow-hidden text-white" style={{ height: "clamp(30rem, 10vh + 90vw, 130rem)" }}>
             <div className="absolute pointer-events-none z-10 plane-float top-[12vh] md:top-[15vh] lg:top-0 left-0">
                 <div ref={planeRef}>
                     <img src={AboutMe} className="w-200 h-auto" />

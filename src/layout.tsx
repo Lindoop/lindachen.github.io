@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import Navigate from './components/Navigation';
 import Title from './components/Title';
 import About from './components/About';
-import Experience from './components/Experience';
+//import Experience from './components/Experience';
+import Resume from './components/Resume';
 import Projects from './components/Projects';
 import Footer from './components/Footer';
 
@@ -43,7 +44,10 @@ function Layout() {
           <Navigate />
           <Title />
           <About />
+          <Resume />
+          {/*
           <Experience />
+          */}
           <Projects />
       </div>
       <Footer />

@@ -14,9 +14,10 @@ export default function Navigate() {
     window.scrollTo({ top: y, behavior: "smooth" });
   };
 
+  // TODO: eventually I'll get the Experience section done, then add it after About and before Projects
   const navLinks = [
     { name: "About", id: "about" },
-    { name: "Experience", id: "experience" },
+    { name: "Resume", id: "resume" },
     { name: "Projects", id: "projects" },
     { name: "Contact Me", id: "footer" },
   ];
