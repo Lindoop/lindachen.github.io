@@ -107,7 +107,7 @@ export default function About() {
 
     return (
         <div id="about" ref={containerRef} className="mt-[80vh] w-full relative overflow-hidden text-white">
-            <div className="absolute pointer-events-none z-10 plane-float" style={{ top: 0, left: 0 }}>
+            <div className="absolute pointer-events-none z-10 plane-float top-[12vh] md:top-[15vh] lg:top-0 left-0">
                 <div ref={planeRef}>
                     <img src={AboutMe} className="w-200 h-auto" />
                 </div>
@@ -124,11 +124,10 @@ export default function About() {
                 </div>
             ))}
 
-            <div className="mt-[28vh] ml-[10vw] relative z-10 flex items-center gap-[15vh]">
-                <div className="max-w-2xl bg-black/40 backdrop-blur-sm rounded-4xl px-10 py-8 shadow-lg">
-                    <p className="text-4xl font-fancy leading-relaxed mb-4"> Hi! I’m Linda.</p>
-
-                    <p className="text-xl font-body leading-relaxed mb-4">
+            <div className="mt-[28vh] relative z-10 flex flex-col md:flex-row items-center gap-[5vw] px-[clamp(1rem,5vw,4rem)] lg:px-0 lg:ml-[10vw]">
+                <div className="max-w-2xl bg-black/40 backdrop-blur-sm rounded-4xl px-10 py-8 shadow-lg order-2 md:order-1">
+                    <p className="text-[clamp(1rem,5vw,3rem)] font-fancy leading-relaxed mb-[clamp(0rem,0.5vw,1rem)]"> Hi! I’m Linda.</p>
+                    <p className="text-[clamp(0.5rem,2.5vw,1.25rem)] font-body leading-relaxed mb-[clamp(0.25rem,1vw,2rem)]">
                         I’m a second-year Systems Design Engineering student at the University
                         of Waterloo. I enjoy blending my design roots with where I’m headed as
                         a developer, and over time that interest grew into a curiosity for how
@@ -136,8 +135,7 @@ export default function About() {
                         solve problems, especially when they challenge me to learn along the
                         way.
                     </p>
-
-                    <p className="text-xl font-body leading-relaxed">
+                    <p className="text-[clamp(0.5rem,2.5vw,1.25rem)] font-body leading-relaxed">
                         Outside of class and projects, I spend a lot of time exploring new
                         tech, coding, and experimenting with side projects just to see what I
                         can make. I care about creating things that are useful, thoughtful,
@@ -145,8 +143,11 @@ export default function About() {
                     </p>
                 </div>
 
-                <div className="shrink-0">
-                    <img src={Headshot} className="w-125 h-auto rounded-4xl bg-black/30 p-3 shadow-lg backdrop-blur-sm"/>
+                <div className="shrink-0 order-1 md:order-2">
+                    <img
+                        src={Headshot}
+                        className="w-[clamp(10rem,31vw,60rem)] h-auto rounded-4xl bg-black/30 p-3 shadow-lg backdrop-blur-sm"
+                    />
                 </div>
             </div>
         </div>
