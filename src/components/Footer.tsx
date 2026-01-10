@@ -22,7 +22,7 @@ export default function Footer() {
     const [showResume, setShowResume] = useState(false);
 
     return (
-        <footer id="footer" className="relative mt-[147.7vh] w-full text-white">
+        <footer id="footer" className="relative w-full text-white">
             <div className="bg-black w-full py-30 flex flex-col items-center gap-4">
                 <p className="text-4xl font-fancy italic">Thanks for exploring my corner of the web!</p>
                 <p className="text-md font-body">This website is still in the early stages of development</p>

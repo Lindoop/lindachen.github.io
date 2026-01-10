@@ -202,7 +202,7 @@ export default function Experience() {
     };
     
     return (
-        <div id="experience" className="mt-[100vh] relative w-full h-[130vh] text-white">
+        <div id="experience" className="mt-[50vh] relative w-full h-[320vh] text-white">
             <h2 className="text-7xl font-header text-center mb-20 mt-[10vh]">My Experiences</h2>
             <div className="relative w-full h-full">
                 {WINDOWS.map((win) => {

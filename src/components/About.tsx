@@ -34,13 +34,18 @@ export default function About() {
         const containerHeight = container.clientHeight;
         const containerWidth = container.clientWidth;
 
+        const viewportH = window.innerHeight;
+        const BOTTOM_OFFSET = viewportH;
+
         const EDGE_PADDING = 200;
         const CLOUD_HEIGHT_ESTIMATE = 150;
         const CLOUD_WIDTH_ESTIMATE = 300;
 
+        const maxCloudY = Math.max(EDGE_PADDING, containerHeight - BOTTOM_OFFSET - CLOUD_HEIGHT_ESTIMATE - EDGE_PADDING);
+
         cloudStates.current = CLOUD_IMAGES.map(() => ({
             x: Math.random() * (containerWidth + EDGE_PADDING) - EDGE_PADDING,
-            y: EDGE_PADDING + Math.random() * (containerHeight - CLOUD_HEIGHT_ESTIMATE - EDGE_PADDING * 2),
+            y: EDGE_PADDING + Math.random() * maxCloudY,
             speed: 15 + Math.random() * 25,
             size: 1.2 + Math.random() * 1.5,
         }));
@@ -59,7 +64,7 @@ export default function About() {
 
                 if (cloud.x > containerWidth + scaledWidth + EDGE_PADDING) {
                     cloud.x = -(SPAWN_BUFFER + 40);
-                    cloud.y = EDGE_PADDING + Math.random() * (containerHeight - CLOUD_HEIGHT_ESTIMATE - EDGE_PADDING * 2);
+                    cloud.y = EDGE_PADDING + Math.random() * (containerHeight - BOTTOM_OFFSET - CLOUD_HEIGHT_ESTIMATE - EDGE_PADDING);
                     cloud.speed = 15 + Math.random() * 25;
                     cloud.size = 1.2 + Math.random() * 1.5;
                 }
@@ -84,9 +89,14 @@ export default function About() {
       
         const startX = window.innerWidth;
         const endX = -planeRefEl.offsetWidth;
+
+        const viewportH = window.innerHeight;
       
-        const startScroll = container.offsetTop - window.innerHeight * 1.5;
-        const endScroll = container.offsetTop + container.clientHeight;
+        const startOffset = viewportH * 0.9;
+        const endOffset = viewportH * 0.3;
+        
+        const startScroll = container.offsetTop - startOffset;
+        const endScroll = container.offsetTop + container.clientHeight - endOffset;
       
         const handleScroll = () => {
           const scrollY = window.scrollY;
@@ -106,7 +116,7 @@ export default function About() {
       
 
     return (
-        <div id="about" ref={containerRef} className="mt-[80vh] w-full relative overflow-hidden text-white">
+        <div id="about" ref={containerRef} className="mt-[50vh] w-full h-[225vh] relative overflow-hidden text-white">
             <div className="absolute pointer-events-none z-10 plane-float top-[12vh] md:top-[15vh] lg:top-0 left-0">
                 <div ref={planeRef}>
                     <img src={AboutMe} className="w-200 h-auto" />
