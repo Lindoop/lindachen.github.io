@@ -38,7 +38,7 @@ export default function Projects() {
     const [hoveredId, setHoveredId] = useState<number | null>(null);
 
     return (
-        <div id="projects" className="mt-[40vh] relative w-full h-[381vh] text-white">
+        <div id="projects" className="mt-[25vh] relative w-full h-[280vh] text-white">
             <h2 className="text-6xl font-header text-center mb-10 mt-[10vh]">Projects</h2>
 
             <div className="relative w-full h-full">

@@ -20,7 +20,7 @@ export default function Title() {
     const randomSubtitle = SUBTITLES[Math.floor(Math.random() * SUBTITLES.length)];
 
     return (
-        <div id="title" className="relative w-full h-[175vh] text-white">
+        <div id="title" className="relative w-full h-[120vh] text-white">
             <img src={Astronaut} className="astronaut-float astronaut-float absolute top-[50vh] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[clamp(13rem,35vw,200rem)] pointer-events-none"/>
             <div className="mt-[30vh] flex flex-col">
                 <div className="ml-[clamp(1rem,20vw,100rem)] text-[clamp(3rem,6vw,6rem)] font-serif">Linda</div>

@@ -16,149 +16,94 @@ import OpenWindow5 from "../assets/OpenWindow_5.png";
 import OpenWindow6 from "../assets/OpenWindow_6.png";
 */}
 
-import WindowLight1 from "../assets/WindowLight_1.png";
-import WindowLight2 from "../assets/WindowLight_2.png";
-import WindowLight3 from "../assets/WindowLight_3.png";
-import WindowLight4 from "../assets/WindowLight_4.png";
-{/*
-import WindowLight5 from "../assets/WindowLight_5.png";
-import WindowLight6 from "../assets/WindowLight_6.png";
-*/}
-
 const WINDOWS = [
     {
         id: 1,
         img: Window1,
-        top: "15%",
-        left: "12%",
-        width: "w-38",
+        top: "11vh",
+        left: "12vw",
+        width: "w-[9vw]",
     },
     {
         id: 2,
         img: Window2,
-        top: "9%",
-        left: "0%",
-        width: "w-38",
+        top: "4vh",
+        left: "0vw",
+        width: "w-[9vw]",
     },
     {
         id: 3,
         img: Window3,
-        top: "61%",
-        left: "12%",
-        width: "w-36",
+        top: "67vh",
+        left: "12vw",
+        width: "w-[9vw]",
     },
     {
         id: 4,
         img: Window4,
-        top: "61%",
-        left: "0%",
-        width: "w-36",
+        top: "66vh",
+        left: "0vw",
+        width: "w-[9.25vw]",
     },
     {
         id: 5,
         img: Window5,
-        top: "104%",
-        left: "12%",
-        width: "w-34",
+        top: "122vh",
+        left: "12vw",
+        width: "w-[8.5vw]",
     },
     {
         id: 6,
         img: Window6,
-        top: "110%",
-        left: "0%",
-        width: "w-34",
+        top: "128vh",
+        left: "0vw",
+        width: "w-[8.75vw]",
     }
 ];
 const OPEN_WINDOWS = [
     {
         id: 1,
         img: OpenWindow1,
-        top: "-3%",
-        left: "10%",
-        width: "w-30",
+        bottom: "149vh",
+        left: "0vw",
+        width: "w-full"
     },
     {
         id: 2,
         img: OpenWindow2,
-        top: "-1%",
-        left: "0%",
-        width: "w-33",
+        bottom: "135vh",
+        left: "0vw",
+        width: "w-full"
     },
     {
         id: 3,
         img: OpenWindow3,
-        top: "-3%",
-        left: "5%",
-        width: "w-33",
+        bottom: "94vh",
+        left: "0vw",
+        width: "w-full"
     },
     {
         id: 4,
         img: OpenWindow4,
-        top: "-5%",
-        left: "0%",
-        width: "w-33",
+        bottom: "82vh",
+        left: "0vw",
+        width: "w-full"
     },
     {/*
     {
         id: 5,
         img: OpenWindow5,
-        top: "-2%",
-        left: "2%",
-        width: "w-35",
+        bottom: "49vh",
+        left: "0vw",
+        width: "w-full"
     },
     {
         id: 6,
         img: OpenWindow6,
-        top: "-3%",
-        left: "0%",
-        width: "w-34",
+        bottom: "46vh",
+        left: "0vw",
+        width: "w-full"
     }
-    */}
-];
-const WINDOW_LIGHTS = [
-    { 
-        id: 1,
-        img: WindowLight1,
-        top: "-59%",
-        left: "17%",
-        width: "w-[85vw]"
-    },
-    { 
-        id: 2,
-        img: WindowLight2,
-        top: "-72%",
-        left: "5%",
-        width: "w-[95vw]"
-    },
-    { 
-        id: 3,
-        img: WindowLight3,
-        top: "-57%",
-        left: "15%",
-        width: "w-[85vw]"
-    },
-    { 
-        id: 4,
-        img: WindowLight4,
-        top: "-66%",
-        left: "5%",
-        width: "w-[95vw]"
-    },
-    {/*
-    { 
-        id: 5,
-        img: WindowLight5,
-        top: "-73%",
-        left: "15%",
-        width: "w-[85vw]"
-    },
-    { 
-        id: 6,
-        img: WindowLight6,
-        top: "-65%",
-        left: "3%",
-        width: "w-[100vw]"
-    },
     */}
 ];
 
@@ -178,14 +123,14 @@ const EXPERIENCES = [
         description: "At BitGo, I was on the mobile development team. During my work term, I built a comprehensive test suite from scratch for a React Native mobile application, raising unit test coverage from 0% to 80%. I implemented a GitHub Action to enforce minimum code coverage thresholds, ensuring that over 100 pull requests did not reduce overall coverage. I also designed an integration testing framework using Bash to spin up test environments, enabling automated testing on every pull request.",
     },
     {
-        id: 3,
+        id: 4,
         title: "Full-Stack Developer",
         company: "Counting Opinions",
         date: "January 2025 - April 2025",
         description: "At Counting Opinions, I contributed to accelerating product release by leveraging Google Gemini AI to generate test data and produce realistic form responses. I optimized API calls to Gemini using asynchronous programming, reducing latency and improving response times by eight seconds. On the front-end, I designed the website layout using Figma wireframes, providing a clear visual blueprint that streamlined development. I also authored a technical specification outlining app features, APIs, and task assignments, serving as a roadmap for the team. Additionally, I engineered a system to format and export HTML table data into Excel using the Sheets API, enabling seamless data integration."
     },
     {
-        id: 4,
+        id: 3,
         title: "Junior Web Developer",
         company: "Counting Opinions",
         date: "June 2023 - August 2024",
@@ -197,23 +142,21 @@ export default function Experience() {
     const [hoveredId, setHoveredId] = useState<number | null>(null);
 
     const getTopOffset = (windowId: number) => {
-        if (windowId <= 2) return "-5%";
-        return "-15%";
-    };
-    
+        if (windowId <= 2) return -8;
+        return -25;
+    };      
+
     return (
-        <div id="experience" className="mt-[50vh] relative w-full h-[320vh] text-white">
-            <h2 className="text-7xl font-header text-center mb-20 mt-[10vh]">My Experiences</h2>
+        <div id="experience" className="mt-[40vh] relative w-full h-[235vh] text-white">
+            <h2 className="text-7xl font-header text-center mt-[10vh]">My Experiences</h2>
+
             <div className="relative w-full h-full">
                 {WINDOWS.map((win) => {
                     const openWin = OPEN_WINDOWS.find(o => o.id === win.id);
-                    const lightWin = WINDOW_LIGHTS.find(l => l.id === win.id);
-
-                    const canHover = !!openWin || !!lightWin;
+                    const canHover = !!openWin;
                     const isHovered = hoveredId === win.id && canHover;
 
                     const baseZ = win.id % 2 === 0 ? 100 + win.id : 50 + win.id;
-                    const lightZ = baseZ - 1;
 
                     return (
                         <div key={win.id}>
@@ -223,40 +166,24 @@ export default function Experience() {
                                 onMouseEnter={() => canHover && setHoveredId(win.id)}
                                 onMouseLeave={() => canHover && setHoveredId(null)}
                             >
-                                {/* Closed window */}
                                 <img
                                     src={win.img}
                                     alt="window closed"
                                     className={`${win.width} h-auto relative transition-opacity duration-150 ${isHovered ? "opacity-0" : "opacity-100"}`}
                                     style={{ zIndex: baseZ }}
                                 />
-
-                                {/* Open window */}
-                                {openWin && (
-                                    <img
-                                        src={openWin.img}
-                                        alt="window open"
-                                        className={`${openWin.width} absolute transition-opacity duration-150 pointer-events-none`}
-                                        style={{
-                                            top: openWin.top,
-                                            left: openWin.left,
-                                            opacity: isHovered ? 1 : 0,
-                                            zIndex: baseZ
-                                        }}
-                                    />
-                                )}
                             </div>
 
-                            {/* Window light (outside container, still part of map so we have win/lightWin) */}
-                            {isHovered && lightWin && (
+                            {isHovered && openWin && (
                                 <img
-                                    src={lightWin.img}
-                                    alt="window light"
-                                    className={`${lightWin.width} absolute transition-opacity duration-150 pointer-events-none`}
+                                    src={openWin.img}
+                                    alt="window open"
+                                    className={`${openWin.width} absolute transition-opacity duration-150 pointer-events-none`}
                                     style={{
-                                        top: lightWin.top,
-                                        left: lightWin.left,
-                                        zIndex: lightZ
+                                        bottom: openWin.bottom,
+                                        left: openWin.left,
+                                        opacity: 1,
+                                        zIndex: baseZ + 300,
                                     }}
                                 />
                             )}
@@ -264,10 +191,10 @@ export default function Experience() {
                             {/* Spotlighted experience text */}
                             {isHovered && EXPERIENCES.find(exp => exp.id === win.id) && (
                                 <div
-                                    className="absolute w-[80%] max-w-4xl p-6 text-white transition-opacity duration-300 z-500"
+                                    className="absolute w-[80%] max-w-4xl p-6 pr-10 text-white transition-opacity duration-300 z-500"
                                     style={{
-                                        top: `calc(${win.top} + ${getTopOffset(win.id)})`,
-                                        left: "35%",
+                                        top: `calc(${win.top} + ${getTopOffset(win.id)}vh)`,
+                                        left: "40%",
                                     }}
                                 >
                                     <h2 className="text-5xl font-fancy font-bold mb-2">
@@ -276,7 +203,7 @@ export default function Experience() {
                                     <p className="text-2xl font-body italic mb-4">
                                         {EXPERIENCES.find(exp => exp.id === win.id)?.date}
                                     </p>
-                                    <p className="text-2xl leading-relaxed">
+                                    <p className="text-2xl leading-relaxed mr-20">
                                         {EXPERIENCES.find(exp => exp.id === win.id)?.description}
                                     </p>
                                 </div>

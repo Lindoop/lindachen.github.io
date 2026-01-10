@@ -92,7 +92,7 @@ export default function About() {
 
         const viewportH = window.innerHeight;
       
-        const startOffset = viewportH * 0.9;
+        const startOffset = viewportH * 2;
         const endOffset = viewportH * 0.3;
         
         const startScroll = container.offsetTop - startOffset;
@@ -116,7 +116,7 @@ export default function About() {
       
 
     return (
-        <div id="about" ref={containerRef} className="mt-[50vh] w-full h-[225vh] relative overflow-hidden text-white">
+        <div id="about" ref={containerRef} className="w-full mt-[30vh] h-[150vh] relative overflow-hidden text-white">
             <div className="absolute pointer-events-none z-10 plane-float top-[12vh] md:top-[15vh] lg:top-0 left-0">
                 <div ref={planeRef}>
                     <img src={AboutMe} className="w-200 h-auto" />
