@@ -43,7 +43,7 @@ export default function Navigate() {
 
         {/* Mobile menu toggle */}
         <div className="md:hidden">
-          <button type="button" className="text-2xl z-50" onClick={() => setMenuOpen(!menuOpen)}>
+          <button type="button" className="text-2xl z-1000" onClick={() => setMenuOpen(!menuOpen)}>
             {menuOpen ? "×" : "☰"}
           </button>
         </div>
@@ -51,9 +51,9 @@ export default function Navigate() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="fixed inset-0 z-1000 bg-foreground text-white md:hidden flex flex-col items-center justify-center space-y-6">
+        <div className="fixed inset-0 z-999 bg-foreground text-white md:hidden flex flex-col items-center justify-center">
           {navLinks.map((link) => (
-            <button key={link.id} type="button" className="text-primary hover:text-secondary text-2xl font-fancy"
+            <button key={link.id} type="button" className="text-primary hover:text-secondary text-6xl mb-10 font-fancy"
               onClick={() => {
                 setMenuOpen(false);
                 setTimeout(() => scrollToWithOffset(link.id), 250);
